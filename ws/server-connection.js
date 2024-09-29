@@ -140,10 +140,17 @@ ws.on("message", async (proto) => {
 		}
 
 		let host_url = filter_by_url(host)
-		console.log("http://localhost:" + host_url[0] + url)
+
+		console.log(request_object)
+
 		let response = await fetch("http://localhost:" + host_url[0] + url, {
-			headers
-		}).catch(() => {
+			headers,
+			body : headers["Content-Type"]  ? request_object.body : null,
+			method : request_object.method
+		}).catch((e) => {
+
+			//fix this when not available
+			console.log(e)
 
 			ws.send(JSON.stringify({
 				stalled_request_id,
@@ -152,10 +159,11 @@ ws.on("message", async (proto) => {
 					body : "error 404"
 				}
 			}))
+			
 
 		})
-		console.log(response.statusText)
-		if(response.statusText != "OK"){
+
+		if(response.statusText && response.statusText != "OK"){
 			return
 		}
 		
@@ -180,6 +188,7 @@ ws.on("message", async (proto) => {
 			response_headers[key] = value
 		})
 
+		console.log("http://localhost:" + host_url[0] + url, response.statusText)
 		ws.send(JSON.stringify({
 			stalled_request_id,
 			type : "server.rest.response",

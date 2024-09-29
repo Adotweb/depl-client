@@ -7,42 +7,8 @@
 
 
 
-}Sun, 29 Sep 2024 09:08:50 GMT body-parser deprecated bodyParser: use individual json/urlencoded middlewares at index.js:27:9
+}Sun, 29 Sep 2024 10:35:32 GMT body-parser deprecated bodyParser: use individual json/urlencoded middlewares at index.js:27:9
 
-Sun, 29 Sep 2024 09:08:50 GMT body-parser deprecated undefined extended: provide extended option at node_modules/body-parser/index.js:104:29
+Sun, 29 Sep 2024 10:35:32 GMT body-parser deprecated undefined extended: provide extended option at node_modules/body-parser/index.js:104:29
 
 server runs on port 3000
-
-{
-
-    "name":"alim"
-
-}
-
-{
-
-    "name":"alim"
-
-}
-
-{
-
-    "name":"alim"
-
-}
-
-npm ERR! path /usr/src/app
-
-npm ERR! command failed
-
-npm ERR! signal SIGTERM
-
-(npm ERR! command sh -c -- node index.js
-
-
-
-5npm ERR! A complete log of this run can be found in:
-
-Cnpm ERR!     /root/.npm/_logs/2024-09-29T09_08_50_239Z-debug-0.log
-
-logs ended here at 1727601094859
